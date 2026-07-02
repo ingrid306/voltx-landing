@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-slate-100 font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-volt text-ink;
+  }
+  *:focus-visible {
+    outline: 2px solid #F4C430;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-volt;
+  }
+
+  .btn-volt {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-volt px-6 py-3 font-display font-bold text-ink2 transition-all hover:bg-white hover:shadow-[0_0_24px_rgba(244,196,48,0.5)] active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-line px-6 py-3 font-display font-semibold text-slate-100 transition-all hover:border-volt hover:text-volt;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-red-500/40 px-4 py-2 text-sm font-semibold text-red-400 transition-all hover:bg-red-500/10;
+  }
+
+  .card-surface {
+    @apply rounded-md border border-line bg-surface;
+  }
+
+  .field-label {
+    @apply mb-1.5 block font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400;
+  }
+
+  .field-input {
+    @apply w-full rounded-sm border border-line bg-ink2 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 transition-colors focus:border-volt;
+  }
+
+  .field-error {
+    @apply mt-1.5 font-mono text-xs text-red-400;
+  }
+
+  .trace-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-line to-transparent;
+  }
+
+  .badge-dot {
+    @apply h-1.5 w-1.5 rounded-full bg-circuit animate-pulseDot;
+  }
+}
+
+@layer utilities {
+  .bg-grid-fade {
+    background-image: var(--tw-gradient-grid, none);
+  }
+}
